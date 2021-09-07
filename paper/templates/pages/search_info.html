@@ -1,0 +1,43 @@
+{%  extends 'pages/base.html'  %}
+
+{% block body %}
+    <main class="container">
+    <div class="container mt-5">
+        <h1 class="alert-danger text-center p-3"> Question Papers</h1>
+<form method='GET'>
+    {{filters.form}}
+    <input type="submit"  class="btn btn-danger" value="Search" name=''>
+</form>
+<hr>
+<form method="get">
+
+    <main class="container">
+    <table class=" table table-bordered">
+        
+            <tr>
+                <th>Department</th>
+                <th>Course</th>
+                <th>Semester</th>
+                
+            </tr>
+        {% for item in filters.qs %}
+        <tr>
+            <td style="text-transform:capitalize">{{item.Department}}</td>
+               <td style="text-transform:capitalize" >{{item.Course}}</td>
+                <td style="text-transform:capitalize" >{{item.Semester}}</td>
+                <td>
+                    
+                    <a href="{{item.my_file.url}}" class="btn btn-warning">View File </a>
+                    <a href="{{item.my_file.url}}" Download>{{item.my_file}}</a> 
+                </td>
+            
+            
+        </tr>
+        {% endfor %}
+    </table>
+    
+    
+
+  </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,29 @@
+{%  extends 'pages/base.html' %}
+{% block body %}
+
+
+      <h1 class="text-Center">CONTACT FORM</h1>
+
+      <form action='POST'>
+          
+        <Label>Your Name</Label>
+        <input type="text"  class="form-control"placeholder="Enter name" name="name">
+        
+       
+         
+        <Label>Email ID</Label>
+         <input type="text"  class="form-control" placeholder="Enter Email" name="email">
+         
+        
+          <label >Subject</label>
+          <textarea class="form-control" placeholder="Enter Message" name="msg"> </textarea>
+         <br>
+         <a href="/" class="btn btn-danger">Submit </a>
+      </form>
+
+
+ 
+  </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+<div class="row">
+	<div class="col-md">
+	<div class="card card-body">
+        <form method='POST'>
+            {% csrf_token %}
+            <select name="Department">
+                <option>-------select Department------</option>
+                    <option>Department of BBA</option>
+                       <option>Department of Engineering</option>
+            </select>
+            <select name="Semester">
+                <option>-----Select Semester-----</option>
+                <option>Sem1</option>
+                <option>Sem2</option>
+            </select>           
+                        
+                
+            
+
+	<table class="table table-sm">
+	<tr>
+	    <th>Department</th>
+	    <th>Course</th>
+	    <th>Semester</th>
+	    
+	</tr>
+	{% for item in item_list %}
+	<tr>
+	    <td>{{item.Department}}</td>
+	    <td>{{item.Course}}</td>
+	    <td>{{item.Semester}}</td>
+	   
+	</tr>
+	{% endfor %}
+	</table>
+    </form>
+	</div>
+
+	</div>
+    <div class="row">
+        <div class="col">
+        <div class="card card-body">
+        <form method="get">
+               {{tableFilter.form}}
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        </div>
+        </div>
+    </div>
+</div>

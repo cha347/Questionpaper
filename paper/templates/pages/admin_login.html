@@ -1,0 +1,47 @@
+
+{% extends 'pages/navigation_admin.html' %}
+{% block body %}
+{% ifequal error "no" %}
+<script>
+  alert('Logged In Successfully');
+  window.location=('/admin_homepage.html' );
+  </script>
+  {% endifequal %}
+  {% ifequal error "yes" %}
+  <script>
+    alert('Invalid Login Credentials,Try Again');
+  </script>
+{% endifequal %}
+</script>
+
+
+<div class="container mt-5" >
+    <div class="row">
+      <div class="col-sm-6">
+        <h2 class="text-center">NEW STAFF MEMBER</h2>
+        <HR>
+         <p class="lead"> By creating an account with our website,u will be able to 
+             upload previous year question papers</p>
+         
+      </div>
+   <div class="col-sm-6" style="background-color:whitesmoke">
+     <h2 class="text-center"> LOGIN WITH US</h2>
+     <HR>
+       <form method='POST'>
+         {% csrf_token %}
+         
+         
+         <Label>Email ID</Label>
+         <input type="text"  class="form-control"placeholder="Enter UserName" name="username">
+         <label>Password</label>
+         <input type="text" class="form-control" placeholder="Enter Password" name="pwd"> 
+         <br>
+         <a href="/admin_homepage.html" class="btn btn-danger">LOGIN</a>
+        
+       </form>
+   </div>
+    </div>
+   </div>
+
+
+{% endblock %}

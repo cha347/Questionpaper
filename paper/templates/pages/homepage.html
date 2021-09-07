@@ -1,0 +1,53 @@
+{%  extends 'pages/base.html' %}
+{% block body %}
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Helping Students With
+           Previous Year Question Papers</h1>
+           <br>
+           
+      <p class="lead">The Semester exam paper pattern becomes clear to you by solving these questions.
+          Solving previous year question papers will help you understand what you need to 
+          and what you need to apply.
+         
+          
+      </p>
+      <hr class="my-4">
+      <a class="btn btn-danger" href="/searchinformation.html" role="button">EXAMINATION</a>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ 
+
+      <h1 class="text-Center">CONTACT FORM</h1>
+
+      <form action="POST" action="/">
+          {% csrf_token %}
+        <Label>Your Name</Label>
+        <input type="text"  class="form-control"placeholder="Enter name" name="name">
+        
+       
+         
+        <Label>Email ID</Label>
+         <input type="text"  class="form-control" placeholder="Enter Email" name="email">
+         
+        
+          <label >Subject</label>
+          <textarea  type="text" class="form-control" placeholder="Enter Message" name="subject"> </textarea>
+         <br>
+         <a href="/" class="btn btn-danger">Submit </a>
+      </form>
+
+
+ 
+  </div>
+  </div>
+
+{% endblock %}

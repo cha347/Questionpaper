@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a  href="/"class="navbar-brand" >FoodHouse</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href=" #">Add item</a>
+              </li>
+              
+              
+            <form action ="/search_data" method="GET">
+              
+              <input type="Search" name='q' placeholder="Search"  >
+              
+              <button class="btn btn-outline-success" type="submit" placeholder="Search">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<form method="GET">
+    {% csrf_token %}
+    {% for item in item_list%}
+    <div class="col-md-4">
+        <h3>{{item.Department}}</h3>
+        <h5>{{ item.Course}}</h5>
+        <h6>{{ item.Semester}</h6>
+        <h6>{{ item.my_file}</h6>
+     {% block body%}
+     {% endblock %}
+ 
+
+    
+
+</div>
+{% endfor %}
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{%  extends 'pages/navigation_admin.html' %}
+{% block body %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2 class="text-center">NEW STAFF MEMBER</h2>
+        <HR>
+         <p class="lead"> By creating an account with our website,u will be able to 
+             upload previous year question papers</p>
+         <center>
+           <a href='/signup.html' class="btn btn-danger text-white mt-5">CREATE AN ACCOUNT</a>
+         </center>
+      </div>
+   <div class="col-sm-6">
+     <h2 class="text-center"> LOGIN WITH US</h2>
+     <HR>
+       <form method='POST'>
+         {% csrf_token %}
+         
+         
+         <Label>Email ID</Label>
+         <input type="text"  class="form-control"placeholder="Enter Email" name="emailid">
+         
+        
+          <label >Password (8 characters minimum):</label>
+          <input type="password" class="form-control" placeholder="Enter Password" name="pwd"> 
+         <br>
+         <a href="/fillsem.html" class="btn btn-danger">LOGIN</a>
+       </div>
+         
+       </form>
+   </div>
+    </div>
+   
+     
+   {% endblock %}
+  
+
+
